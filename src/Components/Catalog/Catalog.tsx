@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getProducts } from '../../store/catalog/action'
 import { Product } from '../../store/types'
 import { ApplicationState } from '../../store/store'
 import MySpinner from '../common/MySpinner/MySpinner'
 import ProductCard from '../common/ProductCard/ProductCard'
-import { Col, Container, Row, Toast } from 'react-bootstrap'
-import style from './Catalog.module.scss'
+import { Col, Container, Row } from 'react-bootstrap'
+import style from '../common/style/commonStyle.module.scss'
 import { messageToState } from '../../store/message/action'
 
 interface PropsFromDispatch {
@@ -27,17 +27,13 @@ const Catalog: React.FC<AllProps> = (props: AllProps) => {
 	useEffect(() => {
 		getProducts()
 	}, [])
-	/*
-	const [showA, setShowA] = useState<boolean>(true)
-	const toggleShowA = (): void => setShowA(!showA)
-*/
 
 	return isFetching ? (
 		<MySpinner />
 	) : (
 		<div>
-			<h1>Каталог</h1>
 			<Container>
+				<h1 className={style.title_margin}>Каталог</h1>
 				<Row>
 					{productsList.map(product => (
 						<Col

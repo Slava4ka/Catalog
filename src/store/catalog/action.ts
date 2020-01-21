@@ -10,6 +10,9 @@ const getProductsList = (items: Product[]) =>
 
 const setToggleIsFetching = () => action(catalogActionTypes.TOGGLE_IS_FETCHING)
 
+const setError = (error: string) =>
+	action(catalogActionTypes.FETCH_ERROR, error)
+
 export const getProducts = (): ThunkAction<
 	void,
 	ApplicationState,
@@ -17,7 +20,12 @@ export const getProducts = (): ThunkAction<
 	Action<string>
 > => async dispatch => {
 	dispatch(setToggleIsFetching())
-	const asyncResp = await fetchProductsList()
-	dispatch(getProductsList(asyncResp.items))
+	try {
+		const asyncResp = await fetchProductsList()
+		dispatch(getProductsList(asyncResp.items))
+	} catch (e) {
+		setError('Возникла ошибка')
+		throw e
+	}
 	dispatch(setToggleIsFetching())
 }

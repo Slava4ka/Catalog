@@ -6,10 +6,6 @@ const addMessage = (text: string, time: number) => {
 	return action(catalogActionTypes.ADD_MESSAGE, { text, time })
 }
 
-const removeMessage = (id: number) => {
-	action(catalogActionTypes.REMOVE_MESSAGE, id)
-}
-
 const hideMessage = (id: number) => {
 	return action(catalogActionTypes.SET_VISIBILITY, id)
 }

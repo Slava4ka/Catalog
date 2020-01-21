@@ -1,5 +1,4 @@
 import React from 'react'
-import style from './MyMessage.module.scss'
 import { Toast } from 'react-bootstrap'
 
 type MessageListProps = {

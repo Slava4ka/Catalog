@@ -1,19 +1,29 @@
-import { MessageState, catalogActionTypes, messageType } from '../types'
-import { Action, ActionCreator, Reducer } from 'redux'
-import { action } from 'typesafe-actions'
+import { catalogActionTypes, MessageState, messageType } from '../types'
+import { Reducer } from 'redux'
 
 const initialState: MessageState = {
 	message: []
 }
 
-/*
-const push = (messages: messageType[], newMessage: messageType): messageType[]=> {
-return
+const push = (
+	messages: messageType[],
+	newMessage: messageType
+): messageType[] => {
+	return [
+		...messages,
+		{
+			id: messages.length,
+			text: newMessage.text,
+			time: newMessage.time,
+			isVisible: true
+		}
+	]
 }
 
+const remove = (messages: messageType[], id: number): messageType[] => {
+	return messages.filter(m => m.id !== id)
+}
 
-const remove = (): messageType[]={}
-*/
 const messageReducer: Reducer<MessageState> = (
 	state = initialState,
 	action
@@ -22,30 +32,13 @@ const messageReducer: Reducer<MessageState> = (
 		case catalogActionTypes.ADD_MESSAGE: {
 			return {
 				...state,
-				message: [
-					...state.message,
-					{
-						id: state.message.length,
-						text: action.payload.text,
-						time: action.payload.time,
-						isVisible: true
-					}
-				]
+				message: push(state.message, action.payload)
 			}
 		}
 		case catalogActionTypes.SET_VISIBILITY: {
 			return {
 				...state,
-				message: state.message.filter(m => {
-					return m.id !== action.payload
-				})
-				/*
-                message: state.message.map(m => {
-					if (m.id === action.payload) {
-						return { ...m, isVisible: false }
-					} else return m
-				})
-                 */
+				message: remove(state.message, action.payload)
 			}
 		}
 		default:

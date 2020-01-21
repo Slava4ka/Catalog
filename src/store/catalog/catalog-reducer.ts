@@ -18,6 +18,9 @@ const catalogReducer: Reducer<CatalogState> = (
 		case catalogActionTypes.TOGGLE_IS_FETCHING: {
 			return { ...state, isFetching: !state.isFetching }
 		}
+		case catalogActionTypes.FETCH_ERROR: {
+			return { ...state, errors: action.payload }
+		}
 		default:
 			return state
 	}

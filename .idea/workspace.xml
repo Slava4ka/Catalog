@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a287db2-23e5-404f-8cff-f82c5ae8d8c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Catalog/Catalog.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MyMessage/MyMessage.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MyMessage/MyMessage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/MySpinner/MySpinner.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/MySpinner/MySpinner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/ProductCard/ProductCard.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/common/ProductCard/ProductCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actionTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/cart/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/cart/cart-reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/catalog/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/message/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/message/message-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/common/style/commonStyle.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Catalog/Catalog.module.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Catalog/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Catalog/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/catalog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/catalog/catalog-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MyMessage/MyMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MyMessage/MyMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/catalog/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/catalog/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/catalog/catalog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/catalog/catalog-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/message/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/message/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/message/message-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/message/message-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/types.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -130,7 +119,7 @@
       <workItem from="1579285690736" duration="930000" />
       <workItem from="1579358282524" duration="5885000" />
       <workItem from="1579451824880" duration="24325000" />
-      <workItem from="1579546223892" duration="21364000" />
+      <workItem from="1579546223892" duration="23676000" />
     </task>
     <servers />
   </component>

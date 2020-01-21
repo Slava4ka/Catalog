@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import style from './MessageBox.module.scss'
 import MyMessage from '../MyMessage/MyMessage'
 import { Message } from '../../store/types'
