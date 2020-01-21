@@ -1,0 +1,13 @@
+.messageBox {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  max-height: 450px;
+  z-index: 1;
+}
+
+//добвить медиа запросы на уменьшение окна сообщений
+
+.messageBox_none {
+display: none;
+}
