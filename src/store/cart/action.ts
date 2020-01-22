@@ -19,12 +19,10 @@ const dropItemAction = (id: number) => {
 const countTotalPriceAction = () => {
 	return action(catalogActionTypes.COUNT_TOTAL_PRICE)
 }
-/*
-export const addToCart: ActionCreator<Action> = (id: number) => {
-	addItemAction(id, store.getState().catalog.productsList)
-	return countTotalPriceAction()
+
+const dropCartAction = () => {
+	return action(catalogActionTypes.DROP_CART)
 }
-*/
 
 export const addToCart = (
 	id: number
@@ -32,12 +30,21 @@ export const addToCart = (
 	dispatch(addItemAction(id, store.getState().catalog.productsList))
 	dispatch(countTotalPriceAction())
 }
-export const removeFromCart: ActionCreator<Action> = (id: number) => {
-	removeItemAction(id)
-	return countTotalPriceAction()
+
+export const removeFromCart = (
+	id: number
+): ThunkAction<void, ApplicationState, null, Action<string>> => dispatch => {
+	dispatch(removeItemAction(id))
+	dispatch(countTotalPriceAction())
 }
 
-export const dropFromCart: ActionCreator<Action> = (id: number) => {
-	dropItemAction(id)
-	return countTotalPriceAction()
+export const dropFromCart = (
+	id: number
+): ThunkAction<void, ApplicationState, null, Action<string>> => dispatch => {
+	dispatch(dropItemAction(id))
+	dispatch(countTotalPriceAction())
+}
+
+export const dropCart: ActionCreator<Action> = () => {
+	return dropCartAction()
 }

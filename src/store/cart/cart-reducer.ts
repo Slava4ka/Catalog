@@ -37,14 +37,47 @@ const add = (
 	}
 }
 
+const remove = (
+	products: Array<CartPosition>,
+	id: number
+): Array<CartPosition> => {
+	return products
+		.map(item => {
+			if (item.product.id === id) {
+				return { ...item, quantity: item.quantity - 1 }
+			} else return item
+		})
+		.filter(p => p.quantity > 0)
+}
+
+const dropItem = (
+	products: Array<CartPosition>,
+	id: number
+): Array<CartPosition> => {
+	return products.filter(item => item.product.id !== id)
+}
+
 const countTotalPrice = (products: Array<CartPosition>): number => {
-	if (!products) {
+	console.log(products)
+	if (!products.length) {
 		return 0
 	} else {
-		console.log(products)
 		return products
 			.map(p => p.product.price * p.quantity)
 			.reduce((sum, current) => sum + current)
+	}
+}
+
+const dropItemFromTotalCount = (
+	count: number,
+	id: number,
+	products: Array<CartPosition>
+): number => {
+	const currentCount = products.find(p => p.product.id === id)
+	if (typeof currentCount === 'undefined') {
+		return count
+	} else {
+		return count - currentCount.quantity
 	}
 }
 
@@ -58,16 +91,31 @@ const cartReducer: Reducer<CartState> = (state = initialState, action) => {
 			}
 		}
 		case catalogActionTypes.REMOVE_ONE_ITEM: {
-			return { ...state }
+			return {
+				...state,
+				productsCounter: state.productsCounter - 1,
+				products: remove(state.products, action.payload)
+			}
 		}
 		case catalogActionTypes.DROP_ITEM: {
-			return { ...state }
+			return {
+				...state,
+				productsCounter: dropItemFromTotalCount(
+					state.productsCounter,
+					action.payload,
+					state.products
+				),
+				products: dropItem(state.products, action.payload)
+			}
 		}
 		case catalogActionTypes.COUNT_TOTAL_PRICE: {
 			return {
 				...state,
 				totalPrice: countTotalPrice(state.products)
 			}
+		}
+		case catalogActionTypes.DROP_CART: {
+			return initialState
 		}
 		default:
 			return state

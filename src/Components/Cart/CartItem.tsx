@@ -8,7 +8,6 @@ import { CartPosition } from '../../store/types'
 
 interface CartItemPattern {
 	item: CartPosition
-	totalPrice: number
 	addToCart: (id: number) => any
 	removeFromCart: (id: number) => any
 	dropFromCart: (id: number) => any
@@ -17,7 +16,6 @@ interface CartItemPattern {
 const CartItem: React.FC<CartItemPattern> = (props: CartItemPattern) => {
 	const {
 		item: { product, quantity },
-		totalPrice,
 		addToCart,
 		removeFromCart,
 		dropFromCart
@@ -61,15 +59,15 @@ const CartItem: React.FC<CartItemPattern> = (props: CartItemPattern) => {
 						key="bottom"
 						placement="bottom"
 						overlay={
-							<Tooltip
-								id="tooltip-bottom"
-								onClick={() => dropFromCart(product.id)}
-							>
+							<Tooltip id="tooltip-bottom">
 								<strong>Убрать</strong>
 							</Tooltip>
 						}
 					>
-						<FiTrash2 size={'1.6rem'} />
+						<FiTrash2
+							onClick={() => dropFromCart(product.id)}
+							size={'1.6rem'}
+						/>
 					</OverlayTrigger>
 				</div>
 			</Col>

@@ -7,7 +7,8 @@ export enum catalogActionTypes {
 	ADD_ITEM = '@@cart/ADD_ITEM',
 	REMOVE_ONE_ITEM = '@@cart/REMOVE_ONE_ITEM',
 	DROP_ITEM = '@@cart/DROP_ITEM',
-	COUNT_TOTAL_PRICE = '@@cart/COUNT_TOTAL_PRICE'
+	COUNT_TOTAL_PRICE = '@@cart/COUNT_TOTAL_PRICE',
+	DROP_CART = '@@cart/DROP_CART'
 }
 
 export interface Product {
