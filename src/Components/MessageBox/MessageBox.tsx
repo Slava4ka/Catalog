@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './MessageBox.module.scss'
-import MyMessage from '../MyMessage/MyMessage'
+import MyMessage from '../common/MyMessage/MyMessage'
 import { Message } from '../../store/types'
 import { ApplicationState } from '../../store/store'
 import { hideMessageInState } from '../../store/message/action'

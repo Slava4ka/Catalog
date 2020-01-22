@@ -4,8 +4,10 @@ export enum catalogActionTypes {
 	TOGGLE_IS_FETCHING = '@@catalog/TOGGLE_IS_FETCHING',
 	ADD_MESSAGE = '@@message/ADD_MESSAGE',
 	SET_VISIBILITY = '@@message/SET_VISIBILITY',
-	ADD_TO_CART = '@@cart/ADD_TO_CART',
-	REMOVE_FROM_CART = '@@cart/REMOVE_FROM_CART'
+	ADD_ITEM = '@@cart/ADD_ITEM',
+	REMOVE_ONE_ITEM = '@@cart/REMOVE_ONE_ITEM',
+	DROP_ITEM = '@@cart/DROP_ITEM',
+	COUNT_TOTAL_PRICE = '@@cart/COUNT_TOTAL_PRICE'
 }
 
 export interface Product {
@@ -21,6 +23,7 @@ export interface CardProduct {
 	name: string
 	price: number
 	sendMessage: (text: string) => any
+	addToCart: (id: number) => any
 }
 
 export interface CatalogState {
@@ -37,6 +40,7 @@ export interface CartPosition {
 export interface CartState {
 	readonly productsCounter: number
 	readonly products: Array<CartPosition>
+	readonly totalPrice: number
 	readonly errors?: string
 }
 

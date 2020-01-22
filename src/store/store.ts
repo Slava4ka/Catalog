@@ -1,17 +1,20 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import catalogReducer from './catalog/catalog-reducer'
-import { CatalogState, MessageState } from './types'
+import { CartState, CatalogState, MessageState } from './types'
 import messageReducer from './message/message-reducer'
+import cartReducer from './cart/cart-reducer'
 
 export interface ApplicationState {
 	catalog: CatalogState
 	messages: MessageState
+	cart: CartState
 }
 
 const reducers = combineReducers({
 	catalog: catalogReducer,
-	messages: messageReducer
+	messages: messageReducer,
+	cart: cartReducer
 })
 
 // Добавил composeEnhancers для работы приложения Redux dev tools

@@ -1,8 +1,14 @@
 import React from 'react'
 import style from './Header.module.scss'
 import { Badge, Nav, Navbar } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { ApplicationState } from '../../store/store'
 
-const Header: React.FC = () => {
+interface PropsFromState {
+	productsCounter: number
+}
+
+const Header: React.FC<PropsFromState> = (props: PropsFromState) => {
 	return (
 		<Navbar
 			className={style.header}
@@ -22,7 +28,7 @@ const Header: React.FC = () => {
 					<Nav.Link href="#cart">
 						Корзина
 						<Badge className={style.badge} variant="dark">
-							0
+							{props.productsCounter}
 						</Badge>
 					</Nav.Link>
 				</Nav>
@@ -31,4 +37,10 @@ const Header: React.FC = () => {
 	)
 }
 
-export default Header
+const mapStateToProps = ({ cart }: ApplicationState) => ({
+	productsCounter: cart.productsCounter
+})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

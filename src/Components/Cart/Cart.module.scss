@@ -1,0 +1,69 @@
+@mixin flexing($jContent: center, $height: 100%) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: $jContent;
+  height: $height;
+}
+
+.itemsList {
+  margin-top: 40px;
+}
+
+.item {
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f2f5;
+  font-size: 22px;
+  line-height: 23px;
+
+  .item__image {
+    @include flexing(center, 68px);
+
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+  }
+
+  .item__name {
+    @include flexing(flex-start);
+  }
+
+  .quantity_control {
+    @include flexing;
+
+    .quantity_control__value {
+      text-align: center;
+      width: 48px;
+    }
+
+    svg {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  .item__price {
+    @include flexing();
+
+    svg {
+      margin-left: 4px;
+    }
+  }
+
+  .item__trash {
+    @include flexing();
+
+    svg {
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  &:first-child {
+    border-top: 1px solid #f1f2f5;;
+  }
+}

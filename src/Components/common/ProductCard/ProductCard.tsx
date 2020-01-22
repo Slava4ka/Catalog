@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './ProductCard.module.scss'
 import { CardProduct } from '../../../store/types'
 import { Button } from 'react-bootstrap'
 import { FaRubleSign } from 'react-icons/fa'
+import { useHistory } from 'react-router-dom'
 
 const ProductCard: React.FC<CardProduct> = ({
 	id,
 	price,
 	name,
 	image,
-	sendMessage
+	sendMessage,
+	addToCart
 }: CardProduct) => {
+	const history = useHistory()
+	const [clickStatus, setClickStatus] = useState<boolean>(false)
+
+	const onClickHandle = () => {
+		if (clickStatus) {
+			history.push('/cart')
+		} else {
+			addToCart(id)
+			sendMessage(`${name} успешно добавлен в корзину`)
+			setClickStatus(true)
+		}
+	}
+
 	return (
 		<div className={style.productCard}>
 			<div className={style.container}>
@@ -26,9 +41,9 @@ const ProductCard: React.FC<CardProduct> = ({
 						variant="dark"
 						size="lg"
 						block
-						onClick={() => sendMessage(`${name} успешно добавлен в корзину`)}
+						onClick={() => onClickHandle()}
 					>
-						Добавить в корзину
+						{clickStatus ? 'Оформить заказ' : 'Добавить в корзину'}
 					</Button>
 				</div>
 			</div>
