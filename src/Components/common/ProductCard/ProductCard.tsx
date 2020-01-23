@@ -34,7 +34,8 @@ const ProductCard: React.FC<CardProduct> = ({
 				</div>
 				<div className={style.container__name}>{name}</div>
 				<div className={style.container__price}>
-					{price} <FaRubleSign />
+					{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}{' '}
+					<FaRubleSign />
 				</div>
 				<div className={style.container__button}>
 					<Button

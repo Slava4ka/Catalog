@@ -6,8 +6,12 @@
   z-index: 1;
 }
 
-//добвить медиа запросы на уменьшение окна сообщений
-
 .messageBox_none {
-display: none;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .messageBox {
+    max-height: 220px;
+  }
 }

@@ -55,13 +55,19 @@ const Cart: React.FC<AllProps> = (props: AllProps) => {
 									dropFromCart={dropFromCart}
 								/>
 							))}
-							<Row>
-								<Col md={6}>
-									<Button onClick={dropCart}>Отправть заказ</Button>
+							<Row className={cartStyle.bottomRow_margin}>
+								<Col md={6} sm={12}>
+									<div className={cartStyle.send}>
+										<Button variant="dark" size="lg" onClick={dropCart}>
+											Отправть заказ
+										</Button>
+									</div>
 								</Col>
 								<Col md={6}>
 									<div className={cartStyle.totalPrice}>
-										{`Итого ${totalPrice}`}
+										{`Итого ${totalPrice
+											.toString()
+											.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}`}
 										<FaRubleSign />
 									</div>
 								</Col>

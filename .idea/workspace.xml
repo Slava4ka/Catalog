@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8a287db2-23e5-404f-8cff-f82c5ae8d8c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cart/Cart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cart/Cart.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cart/Cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Cart/CartItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cart/CartItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MessageBox/MessageBox.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/cart/cart-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/cart/cart-reducer.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +118,7 @@
       <workItem from="1579451824880" duration="24325000" />
       <workItem from="1579546223892" duration="52006000" />
       <workItem from="1579736149931" duration="4263000" />
-      <workItem from="1579779203169" duration="2731000" />
+      <workItem from="1579779203169" duration="7528000" />
     </task>
     <servers />
   </component>

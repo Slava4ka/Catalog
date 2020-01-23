@@ -16,24 +16,24 @@ const add = (
 	id: number,
 	catalog: Array<Product>
 ): Array<CartPosition> => {
-	const fromCatalog: ProductToCart = catalog.find(item => {
-		return item.id === id
+	const itemFromCart: ProductInCart = products.find(item => {
+		return item.product.id === id
 	})
-	if (typeof fromCatalog === 'undefined') {
-		return [...products]
-	} else {
-		const itemFromCatalog: ProductInCart = products.find(item => {
-			return item.product.id === id
+	if (typeof itemFromCart === 'undefined') {
+		const itemFromCatalog: ProductToCart = catalog.find(item => {
+			return item.id === id
 		})
 		if (typeof itemFromCatalog === 'undefined') {
-			return [...products, { product: fromCatalog, quantity: 1 }]
+			return [...products]
 		} else {
-			return products.map(item => {
-				if (item.product.id === fromCatalog.id) {
-					return { ...item, quantity: item.quantity + 1 }
-				} else return item
-			})
+			return [...products, { product: itemFromCatalog, quantity: 1 }]
 		}
+	} else {
+		return products.map(item => {
+			if (item.product.id === id) {
+				return { ...item, quantity: item.quantity + 1 }
+			} else return item
+		})
 	}
 }
 

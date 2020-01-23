@@ -31,10 +31,10 @@ const CartItem: React.FC<CartItemPattern> = (props: CartItemPattern) => {
 					/>
 				</div>
 			</Col>
-			<Col md={5} sm={12} xs={12}>
+			<Col md={4} sm={12} xs={12}>
 				<div className={cartStyle.item__name}>{product.name}</div>
 			</Col>
-			<Col md={2} sm={12} xs={12}>
+			<Col md={3} sm={12} xs={12}>
 				<div className={cartStyle.quantity_control}>
 					<Button
 						variant="outline-dark"
@@ -50,7 +50,8 @@ const CartItem: React.FC<CartItemPattern> = (props: CartItemPattern) => {
 			</Col>
 			<Col md={2} sm={6} xs={6}>
 				<div className={cartStyle.item__price}>
-					{product.price} <FaRubleSign />
+					{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+					<FaRubleSign />
 				</div>
 			</Col>
 			<Col md={1} sm={6} xs={6}>
