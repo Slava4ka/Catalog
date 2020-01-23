@@ -6,15 +6,28 @@
   height: $height;
 }
 
-.itemsList {
+%text {
+  font-size: 22px;
+  line-height: 23px;
+}
+
+.itemsList_margin {
   margin-top: 40px;
+}
+
+.emptyCart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -9rem;
+  font-weight: 700;
+  opacity: 0.6;
 }
 
 .item {
   padding: 16px 0;
   border-bottom: 1px solid #f1f2f5;
-  font-size: 22px;
-  line-height: 23px;
+  @extend %text;
 
   .item__image {
     @include flexing(center, 68px);
@@ -66,4 +79,9 @@
   &:first-child {
     border-top: 1px solid #f1f2f5;;
   }
+}
+
+.totalPrice{
+  @include flexing();
+  @extend %text;
 }

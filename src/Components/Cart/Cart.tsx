@@ -13,6 +13,7 @@ import {
 } from '../../store/cart/action'
 import { CartPosition } from '../../store/types'
 import { Col } from 'react-bootstrap'
+import { FaRubleSign } from 'react-icons/fa'
 
 interface PropsFromDispatch {
 	products: Array<CartPosition>
@@ -42,7 +43,7 @@ const Cart: React.FC<AllProps> = (props: AllProps) => {
 		<div>
 			<Container>
 				<h1 className={style.title_margin}>Корзина</h1>
-				<div className={cartStyle.itemsList}>
+				<div className={cartStyle.itemsList_margin}>
 					{products.length > 0 ? (
 						<div>
 							{products.map((p, index) => (
@@ -58,11 +59,16 @@ const Cart: React.FC<AllProps> = (props: AllProps) => {
 								<Col md={6}>
 									<Button onClick={dropCart}>Отправть заказ</Button>
 								</Col>
-								<Col md={6}>{`Итого ${totalPrice}`}</Col>
+								<Col md={6}>
+									<div className={cartStyle.totalPrice}>
+										{`Итого ${totalPrice}`}
+										<FaRubleSign />
+									</div>
+								</Col>
 							</Row>
 						</div>
 					) : (
-						<h1>Корзина пуста</h1>
+						<h1 className={cartStyle.emptyCart}>Корзина пуста</h1>
 					)}
 				</div>
 			</Container>
@@ -70,9 +76,9 @@ const Cart: React.FC<AllProps> = (props: AllProps) => {
 	)
 }
 
-const mapStateToProps = ({ cart }: ApplicationState) => ({
-	products: cart.products,
-	totalPrice: cart.totalPrice
+const mapStateToProps = ({ cartPersist }: ApplicationState) => ({
+	products: cartPersist.products,
+	totalPrice: cartPersist.totalPrice
 })
 
 const mapDispatchToProps = {

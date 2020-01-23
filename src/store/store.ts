@@ -4,17 +4,26 @@ import catalogReducer from './catalog/catalog-reducer'
 import { CartState, CatalogState, MessageState } from './types'
 import messageReducer from './message/message-reducer'
 import cartReducer from './cart/cart-reducer'
+import storage from 'redux-persist/lib/storage'
+import { persistReducer, persistStore } from 'redux-persist'
+
+const cartPersistConfig = {
+	key: 'cartStore',
+	storage
+}
 
 export interface ApplicationState {
 	catalog: CatalogState
 	messages: MessageState
-	cart: CartState
+	cartPersist: CartState
+	//cart: CartState
 }
 
 const reducers = combineReducers({
 	catalog: catalogReducer,
 	messages: messageReducer,
-	cart: cartReducer
+	cartPersist: persistReducer(cartPersistConfig, cartReducer)
+	//cart: cartReducer
 })
 
 // Добавил composeEnhancers для работы приложения Redux dev tools
@@ -30,4 +39,7 @@ const store = createStore(
 	reducers,
 	composeEnhancers(applyMiddleware(thunkMiddleware))
 )
+
+export const persistor = persistStore(store)
+
 export default store

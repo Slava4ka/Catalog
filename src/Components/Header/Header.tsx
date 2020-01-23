@@ -37,8 +37,8 @@ const Header: React.FC<PropsFromState> = (props: PropsFromState) => {
 	)
 }
 
-const mapStateToProps = ({ cart }: ApplicationState) => ({
-	productsCounter: cart.productsCounter
+const mapStateToProps = ({ cartPersist }: ApplicationState) => ({
+	productsCounter: cartPersist.productsCounter
 })
 
 const mapDispatchToProps = {}
