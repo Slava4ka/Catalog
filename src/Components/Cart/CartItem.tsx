@@ -48,7 +48,7 @@ const CartItem: React.FC<CartItemPattern> = (props: CartItemPattern) => {
 					</Button>
 				</div>
 			</Col>
-			<Col md={2} sm={6} xs={6}>
+			<Col md={2} sm={6} xs={6} className={cartStyle.noPadding}>
 				<div className={cartStyle.item__price}>
 					{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
 					<FaRubleSign />

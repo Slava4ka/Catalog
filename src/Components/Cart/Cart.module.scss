@@ -24,6 +24,10 @@
   opacity: 0.6;
 }
 
+.noPadding {
+  padding: 0 !important;
+}
+
 .item {
   padding: 16px 0;
   border-bottom: 1px solid #f1f2f5;
@@ -87,7 +91,7 @@
   font-weight: 700;
 }
 
-.send{
+.send {
 
 }
 
@@ -122,10 +126,11 @@
     }
   }
 
-  .send{
+  .send {
     padding-top: 16px;
     padding-bottom: 16px;
-    button{
+
+    button {
       width: 98%;
     }
   }
